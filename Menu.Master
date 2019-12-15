@@ -1,0 +1,243 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Menu.master.vb" Inherits="ProjectRiskManagementSystem.Menu" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head runat="server">
+    <title>PJリスク管理システム</title>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <link href="~/Ext/Insert.css" type="text/css" rel="stylesheet" />
+    <link href="~/Ext/List.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+        // 共通：エラーのため、前画面に戻る
+        function errorBack(msg) {
+            alert(msg);
+            window.history.back(-1);
+        }
+
+        // 共通：BackSpaceを禁止
+        function forbidBackSpace(e) {
+            var ev = e || window.event; 
+            var obj = ev.target || ev.srcElement;
+            var t = obj.type || obj.getAttribute('type');
+
+            var vReadOnly = obj.readOnly;
+            var vDisabled = obj.disabled;
+            vReadOnly = (vReadOnly == undefined) ? false : vReadOnly;
+            vDisabled = (vDisabled == undefined) ? true : vDisabled;
+
+            var flag1 = ev.keyCode == 8 && (t == "password" || t == "text" || t == "textarea") && (vReadOnly == true || vDisabled == true);
+            var flag2 = ev.keyCode == 8 && t != "password" && t != "text" && t != "textarea";
+
+            var flag3 = ev.keyCode == 13 && t == "textarea" && (vReadOnly == true || vDisabled == true);
+            var flag4 = ev.keyCode == 13 && t != "textarea";
+
+            if (flag2 || flag1 || flag3 || flag4) return false;
+        }
+
+        document.onkeydown = forbidBackSpace;
+
+    </script>
+</head>
+<body >
+    <form id="form1" runat="server">
+                <div style="width:260px; float:left">                   
+                    <table>
+                        <tr>
+                            <td class="List_TopHeadTitle">メニュー</td>
+                        </tr>
+                        <tr>
+                            <td><br/><td/>
+                        </tr>
+                        <tr>
+                            <td class="List_SectionTitle">対象案件一覧</td>
+                        </tr>
+                        <tr>                            
+                            <td>
+                                <%--対象案件一覧--%>
+                                <table class="tableContent">
+                                    <tr>
+                                        <td class="List_DetailHeader">支社</td>
+                                        <td >
+                                            <asp:DropDownList ID="ddlPjBranch" runat="server" AutoPostBack="True" Class="List_RetrievalDropdownListWidth" DataTextField="A01M002_SECT_NM" DataValueField="A01M002_SECT_CD"></asp:DropDownList>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">部門</td>
+                                        <td ><asp:DropDownList ID="ddlPjDept" runat="server" Class="List_RetrievalDropdownListWidth" DataTextField="A01M002_SECT_NM" DataValueField="A01M002_SECT_CD"></asp:DropDownList></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">オーダ</td>
+                                        <td ><asp:TextBox ID="txtPjOrder" runat="server" MaxLength="9" class="List_RetrievalTextboxWidth"></asp:TextBox></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">顧客</td>
+                                        <td ><asp:TextBox ID="txtCustomer" runat="server" MaxLength="60" class="List_RetrievalTextboxWidth"></asp:TextBox></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">管理区分</td>
+                                        <td >
+                                            <asp:RadioButton ID="chkRpmTypeA" groupname="chkRpmType" runat="server" Text ="A"/>
+                                            <asp:RadioButton ID="chkRpmTypeB" groupname="chkRpmType" runat="server" Text ="B"/>
+                                            <asp:RadioButton ID="chkRpmTypeAll" groupname="chkRpmType" runat="server" Text ="すべて"/>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">完了区分</td>
+                                        <td ><asp:CheckBox ID="chkCompCategory"  runat="server" Text="完了も含む" /></td>
+                                    </tr>
+                                    
+                                </table>
+                                <table >
+                                    <tr>
+                                        <td align="center" width="130px">
+                                            <asp:Button runat="server" ID="btnPjInput" Text="案件登録"/>
+                                        </td>
+                                        <td align="center" width="130px">
+                                            <asp:Button ID="btnPjSearch" runat="server" Text="検索" />
+                                             <br/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><br/></td>
+                        </tr>
+                        <tr>
+                            <td class="List_SectionTitle">リスク・予防管理検討会</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <%--リスク・予防管理検討会--%>
+                                <table class="tableContent">
+                                    <tr>
+                                        <td class="List_DetailHeader">支社</td>
+                                        <td ><asp:DropDownList ID="ddlRpiBranch" runat="server" AutoPostBack="True" Class="List_RetrievalDropdownListWidth" DataTextField="A01M002_SECT_NM" DataValueField="A01M002_SECT_CD"></asp:DropDownList></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">部門</td>
+                                        <td ><asp:DropDownList ID="ddlRpiDept" runat="server" Class="List_RetrievalDropdownListWidth" DataTextField="A01M002_SECT_NM" DataValueField="A01M002_SECT_CD"></asp:DropDownList></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">プロセス</td>
+                                        <td ><asp:DropDownList ID="ddlProcess" runat="server" Class="List_RetrievalDropdownListWidth" DataTextField="PROCESS_NAME" DataValueField="PROCESS_NO"></asp:DropDownList></asp:TextBox></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">開催日</td>
+                                        <td nowrap="nowrap">
+                                            <asp:DropDownList ID="ddlRpiOpenYear" runat="server" Height="17px" Width="70px" DataTextField="OPEN_YEAR" DataValueField="OPEN_YEAR"></asp:DropDownList>
+                                            年
+                                            <asp:DropDownList ID="ddlRpiOpenMonth" runat="server" Height="17px" Width="50px">
+                                                <asp:ListItem></asp:ListItem>
+                                                <asp:ListItem>1</asp:ListItem>
+                                                <asp:ListItem>2</asp:ListItem>
+                                                <asp:ListItem>3</asp:ListItem>
+                                                <asp:ListItem>4</asp:ListItem>
+                                                <asp:ListItem>5</asp:ListItem>
+                                                <asp:ListItem>6</asp:ListItem>
+                                                <asp:ListItem>7</asp:ListItem>
+                                                <asp:ListItem>8</asp:ListItem>
+                                                <asp:ListItem>9</asp:ListItem>
+                                                <asp:ListItem>10</asp:ListItem>
+                                                <asp:ListItem>11</asp:ListItem>
+                                                <asp:ListItem>12</asp:ListItem>
+                                            </asp:DropDownList>
+                                            月
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">対象オーダ</td>
+                                        <td ><asp:TextBox ID="txtRpiOrder" runat="server" MaxLength="9" class="List_RetrievalTextboxWidth"></asp:TextBox></td>
+                                    </tr>
+                                </table>
+                                <table >
+                                    <tr>
+                                        <td align="center" width="130px">
+                                        </td>
+                                        <td align="center" width="130px">
+                                            <asp:Button ID="btnRpiSearch" runat="server" Text="検索" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><br/></td>
+                        </tr>
+                        <tr>
+                            <td class="List_SectionTitle">品質推進会</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <%--品質推進会--%>
+                                <table class="tableContent">
+                                    <tr>
+                                        <td class="List_DetailHeader">支社</td>
+                                        <td ><asp:DropDownList ID="ddlQpBranch" runat="server" AutoPostBack="True" Class="List_RetrievalDropdownListWidth" DataTextField="A01M002_SECT_NM" DataValueField="A01M002_SECT_CD"></asp:DropDownList></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">部門</td>
+                                        <td ><asp:DropDownList ID="ddlQpDept" runat="server" Class="List_RetrievalDropdownListWidth" DataTextField="A01M002_SECT_NM" DataValueField="A01M002_SECT_CD"></asp:DropDownList></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">開催日</td>
+                                        <td >
+                                            <asp:DropDownList ID="ddlQpOpenFiscalYear" runat="server" Height="17px" Width="70px" DataTextField="OPEN_FISCAL_YEAR" DataValueField="OPEN_FISCAL_YEAR"></asp:DropDownList>
+                                            年度
+                                            <asp:DropDownList ID="ddlQpOpenQuarter" runat="server" Height="17px" Width="50px">
+                                                <asp:ListItem></asp:ListItem>
+                                                <asp:ListItem Value="1">1Q</asp:ListItem>
+                                                <asp:ListItem Value="2">2Q</asp:ListItem>
+                                                <asp:ListItem Value="3">3Q</asp:ListItem>
+                                                <asp:ListItem Value="4">4Q</asp:ListItem>
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="List_DetailHeader">対象オーダ</td>
+                                        <td ><asp:TextBox ID="txtQpOrder" runat="server" MaxLength="9" class="List_RetrievalTextboxWidth"></asp:TextBox></td>
+                                    </tr>
+                                </table>
+                                <table >
+                                    <tr>
+                                        <td align="center" width="130px">
+                                            <asp:Button runat="server" ID="btnQpInput" Width="115px" Text="品質推進会登録"/>
+                                        </td>
+                                        <td align="center" width="130px">
+                                            <asp:Button ID="btnQpSearch" runat="server" Text="検索"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  align="center">
+                                <br/>
+                                <asp:Button ID="btnCsvOutput" runat="server" Text="検索結果のCSV出力" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div style=" margin-left:280px;min-width:1000px;overflow-x:auto;overflow-y:hidden">
+                    <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+                    <section>
+                        <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                    </section>
+                </div>
+    </form>
+</body>
+</html>

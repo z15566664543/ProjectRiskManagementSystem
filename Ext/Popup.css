@@ -1,0 +1,71 @@
+﻿.retrieval-master {
+    font-size           : 14px;
+    color               : White;
+    background-color    : #EEFFEE;
+    width				: 710px;
+	height				: 95px;
+    border-width        : 2px 2px 2px 2px;
+    border-style		: solid solid solid solid;
+    border-color        : #339966;
+}
+
+.retrieval-master-tr{
+    font-size           : 20px;
+    background-color    : #77AA99;
+    text-align          : center;
+    font-weight         : bold;
+}
+
+.retrieval-label {
+    background-color    : #77AA99;
+    border-color        : #339966;
+    border-width        : 1px 1px 1px 1px;
+    border-style		: solid solid solid solid;
+    width				: 105px;
+    font-weight         : bold;
+}
+
+.retrieval-contect{
+    border-color        : #339966;
+    border-width        : 1px 1px 1px 1px;
+    border-style		: solid solid solid solid;
+}
+
+.retrieval-textbox-width{
+    Width               : 149px;
+}
+
+.retrieval-droplist-width{
+    Width               : 153px;
+}
+
+.retrieval-GridView{
+    border              :0;
+    font-size           :12px;
+    width               :685px;
+    line-height         :18px;
+	color               :Black;
+    border-color        :transparent;
+    border-collapse     :collapse;
+}
+
+/* GridViewセル */
+.retrieval-GridViewItemStyle
+{
+	padding             :0px 3px 0px 3px;
+	border              :1px solid black;
+}
+
+.retrieval-GridViewHeaderStyle
+{
+    white-space         :nowrap;
+    padding             :0px 3px 0px 3px;
+    border              :1px solid black;
+    background-color    :#E7EFF7;
+}
+
+#retrieval-div{
+    overflow-y          : scroll;   
+    height              : 400px;
+    width               : 700px;
+}

@@ -1,0 +1,83 @@
+﻿/* メニュー画面ページヘッダ */
+.List_TopHeadTitle {
+    font-size: 20px;
+    font-family: MS UI Gothic;
+    font-weight:bold;
+}
+/* メニュー画面セクションヘッダ　*/
+.List_SectionTitle {
+    font-size: 20px;
+    font-family: MS UI Gothic;
+    font-weight:bold;
+}
+
+/* メニュー画面ヘッダ */
+.List_DetailHeader {
+    color               : White;
+	background-color	: #77AA99;
+	width				: 120px;
+	height				: 20px;
+	vertical-align		: middle;
+	padding				: 0px;
+	margin				: 0px;
+	border-width		: 1px 1px 0px 1px;
+	border-style		: solid solid none solid;
+	border-color		: black;
+    font-weight         : bold;
+    padding-left        : 1px;
+}
+/* メニュー画面ドロップダウンリスト */
+.List_RetrievalDropdownListWidth{
+    Width               : 153px;
+}
+
+/* メニュー画面テキストボックス */
+.List_RetrievalTextboxWidth{
+    Width               : 149px;
+}
+
+/* 一覧画面サイドライン */
+.List_GridViewStyle
+{
+    border:0;
+    border-collapse: collapse;
+    border-color: transparent;
+}
+
+/* リスク予防・管理検討会検索結果、品質推進会議検索結果一覧画面GridViewヘッダ */
+.List_GridViewHeaderStyle
+{
+    white-space: nowrap;
+    background-color: #E7EFF7;
+    height: 30px;
+    border: 1px double black;
+}
+
+/* 案件検索結果一覧画面GridViewヘッダ */
+.List_GridViewPjHeaderStyle{
+    border: 1px solid black;
+    white-space: nowrap;
+    background-color: #E7EFF7;
+    height: 30px;
+}
+
+/* 一覧画面GridView行 */
+.List_GridViewRowStyle
+{
+    border: 1px solid black;
+    white-space: nowrap;
+    height: 20px;
+}
+
+/* 一覧画面GridViewセル */
+.List_GridViewItemStyle
+{
+    white-space:nowrap;
+	padding: 0px 3px 0px 3px;
+	border: 1px solid black;
+}
+
+/* 一覧画面GridView上揃え*/
+.List_GridViewHeaderTop{
+    vertical-align : top;
+}

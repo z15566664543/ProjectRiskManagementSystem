@@ -1,0 +1,188 @@
+﻿/* Risk Manager Start */
+* {
+	font-size: 12px;
+}
+
+body {
+	font-size: 12px;
+	background-color:#EEFFEE;
+	background-repeat: no-repeat;
+}
+
+/* ページヘッダ */
+.top-Headr-Title {
+    font-size: 20px;
+    font-family: MS UI Gothic;
+    font-weight:bold;
+}
+
+/* 起票者（表題） */
+.top-label
+{
+	font-size: 14px;
+	background-color: #3399FF;
+	font-weight: bold;
+	color: #FFFFFF;
+	border-top-style: double;
+    border-left-style: double;
+	border-bottom-style: double;
+    border-color: #003399;
+    border-width:1px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 15px;
+    width:150px;
+}
+
+/* 起票者（内容） */
+.top-contect
+{
+	font-size: 14px;
+	background-color: #FFFFFF;
+	font-weight: bold;
+	color: #000000;
+	border-top-style: double;
+	border-bottom-style: double;
+    border-right-style: double;
+    border-color: #003399;
+    border-width:1px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 15px;
+    width:150px;
+}
+
+/* セクションヘッダLevel1 */
+.section-title {
+    font-size: 20px;
+    font-family: MS UI Gothic;
+    font-weight:bold;
+}
+
+/* セクションヘッダLevel2 */
+.section2-title {
+    font-size: 16px;
+    font-family: MS UI Gothic;
+    font-weight:bold;
+}
+
+/* detail-header */
+.detail-header {
+    color               : White;
+	background-color	: #77AA99;
+	width				: 120px;
+	height				: 20px;
+	vertical-align		: middle;
+	padding				: 0px;
+	margin				: 0px;
+	border-width		: 1px 1px 0px 1px;
+	border-style		: solid solid none solid;
+	border-color		: black;
+    font-weight         : bold;
+    padding-left        : 1px;
+    white-space         : nowrap;
+    text-wrap:none;
+}
+
+.detail-header-width {
+	color				: White;
+	background-color	: #77AA99;
+	width				: 180px;
+	height				: 20px;
+	vertical-align		: middle;
+	padding				: 0px;
+	margin				: 0px;
+	border-width		: 1px 1px 0px 1px;
+	border-style		: solid solid none solid;
+	border-color		: black;
+    font-weight         : bold;
+    padding-left        : 1px;
+    white-space         : nowrap;
+    text-wrap:none;
+}
+
+.detail-header-project {
+	color				: White;
+	background-color	: #77AA99;
+	width				: 150px;
+	height				: 20px;
+	vertical-align		: middle;
+	padding				: 0px;
+	margin				: 0px;
+	border-width		: 1px 1px 0px 1px;
+	border-style		: solid solid none solid;
+	border-color		: black;
+    font-weight         : bold;
+    white-space         : nowrap;
+    text-wrap:none;
+}
+
+.GridViewHeaderStyle
+{
+    color		: White;
+    background-color: #77AA99;
+    height: 30px;
+    border-top: 1px double black;
+    border-bottom: 1px double black;
+    border-left: 1px double black;
+    border-right: 1px double black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table.tableContent {
+	border-width: 1px;
+	border-color: black;
+	border-collapse: collapse;
+}
+
+table.tableContent tr {
+	border:none;
+}
+
+table.tableContent th {
+	border-width: 1px;
+	padding: 1px;
+	border-style: solid;
+	border-color: black;
+}
+table.tableContent td {
+	border-width: 1px;
+	padding: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+table.noStyle {
+	border:none;
+}
+
+table.noStyle tr {
+	border:none;
+}
+
+table.noStyle th {
+    padding: 1px 0px;
+	border:none;
+}
+table.noStyle td {
+    padding: 1px 0px;
+	border:none;
+}
+
+
+a:link {
+ color: #2252d7;
+}
+a:visited {
+ color: #2252d7;
+}
+a:hover {
+ color: #ff7f24;
+}
+a:active {
+ color: #ff7f24;  
+}
+
